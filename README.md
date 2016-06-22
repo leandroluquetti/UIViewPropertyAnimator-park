@@ -5,7 +5,7 @@
 
 
 
-* AnimateWithUIViewPropertyAnimator
+* [AnimateWithUIViewPropertyAnimator](https://github.com/manuelCarlos/IOS10-Animate/tree/master/AnimateWithUIViewPropertyAnimator)
  - Nested UIStackViews.
  - Custom View Controller rotation animation.
  - IOS 10 UIViewPropertyAnimator to animate blur effect. 
