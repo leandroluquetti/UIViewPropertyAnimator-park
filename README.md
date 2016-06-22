@@ -1,4 +1,4 @@
-#BlurAnimate
+
 ### Swift 3.0 - IOS 10+
 
 
