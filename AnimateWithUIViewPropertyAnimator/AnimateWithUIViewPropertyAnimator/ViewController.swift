@@ -69,7 +69,7 @@ class ViewController: UIViewController {
         slider.minimumValue = 0
         slider.maximumValue = 1
         slider.isContinuous = true
-        slider.tintColor = .black()
+        slider.tintColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         slider.value = 0.4
         slider.backgroundColor = #colorLiteral(red: 1, green: 0, blue: 0, alpha: 1)
         slider.maximumTrackTintColor =  #colorLiteral(red: 1, green: 0.99997437, blue: 0.9999912977, alpha: 1)

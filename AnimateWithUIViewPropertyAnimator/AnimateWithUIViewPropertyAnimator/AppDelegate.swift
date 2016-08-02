@@ -14,7 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
-        let appBounds = UIScreen.main().bounds
+        let appBounds = UIScreen.main.bounds
         
         window = UIWindow(frame: appBounds)
         window?.rootViewController = ViewController()

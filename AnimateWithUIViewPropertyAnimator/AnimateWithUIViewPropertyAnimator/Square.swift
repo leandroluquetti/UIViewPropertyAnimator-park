@@ -61,9 +61,7 @@ class Square: UIView {
     
     // MARK: Content Size Handling
     
-    override func intrinsicContentSize() -> CGSize {
-        return pictureView.intrinsicContentSize()
-    }
+    override var intrinsicContentSize: CGSize {  return pictureView.intrinsicContentSize }
 
     
     

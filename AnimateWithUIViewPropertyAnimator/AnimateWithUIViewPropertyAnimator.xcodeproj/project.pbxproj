@@ -96,8 +96,8 @@
 				TargetAttributes = {
 					643AD3221D1A06D80022D020 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = X4WRR7YD46;
-						DevelopmentTeamName = "manuel lopes (Personal Team)";
+						DevelopmentTeam = N3J45D56MZ;
+						DevelopmentTeamName = "manuel lopes";
 						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 					};
@@ -291,6 +291,7 @@
 				643AD3371D1A06D80022D020 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
