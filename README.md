@@ -20,7 +20,7 @@
  - UIViewPropertyAnimator to animate a custom navigation controller transition.
  - Interactive transition using pan gesture.
 <p align="center">
-   <img src="http://manuelcarlos.github.io/images/moon.gif" >
+   <img src="http://manuelcarlos.github.io/images/mooon.gif" >
 </p>
 
 
