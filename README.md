@@ -16,9 +16,8 @@
 
 * [UIViewPropertyAnimatorNavigationTransition](https://github.com/manuelCarlos/IOS10-Animate/tree/master/UIViewPropertyAnimatorNavigationTransition)
 
-
  - UIViewPropertyAnimator to animate a custom navigation controller transition.
- - Interactive transition using pan gesture.
+ - Interactive navigation controller transition using a pan gesture.
 <p align="center">
    <img src="http://manuelcarlos.github.io/images/mooon.gif" >
 </p>
