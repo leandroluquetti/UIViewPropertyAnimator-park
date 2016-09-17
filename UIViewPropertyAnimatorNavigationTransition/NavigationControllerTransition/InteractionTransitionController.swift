@@ -51,8 +51,8 @@ class InteractionTransitionController: UIPercentDrivenInteractiveTransition {
             } else {
                 finish()
             }
-        default:
-            print("Swift switch must be exhaustive, thus the default")
+        default: break
+            
         }
     }
 }
