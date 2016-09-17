@@ -3,7 +3,6 @@
 
 * [PhotosAnimatedTransition](https://github.com/manuelCarlos/UIViewPropertyAnimator-park/tree/master/PhotosAnimatedTransition)
 
-
  - WWDC 2016 - Session 216 Demo app inspired sample.
  - UIViewPropertyAnimator for interactive animations and transitions in a navigation controller.
 
@@ -30,14 +29,6 @@
 </p>
 
 
-<<<<<<< HEAD
- - WWDC 2016 - Session 216 Demo app inspired sample.
- - UIViewPropertyAnimator for interactive animations and transitions in a navigation controller.
-
-<p align="center">
-   <img src="http://manuelcarlos.github.io/images/wwdcDemo.gif" >
-</p>
-=======
 
 
 >>>>>>> origin/master
