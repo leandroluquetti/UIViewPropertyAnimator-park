@@ -29,7 +29,7 @@
  - UIViewPropertyAnimator for interactive animations and transitions in a navigation controller.
 
 <p align="center">
-   <img src="http://manuelcarlos.github.io/images/wwdc16Demo.gif" >
+   <img src="http://manuelcarlos.github.io/images/wwdcDemo.gif" >
 </p>
 
 
