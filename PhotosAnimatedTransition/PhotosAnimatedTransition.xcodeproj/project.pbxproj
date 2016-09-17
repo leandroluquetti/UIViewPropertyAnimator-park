@@ -43,6 +43,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		641C60321D8DDEA5003D8B8A /* TransitioningControllers */ = {
+			isa = PBXGroup;
+			children = (
+				642BF3F21D8D1A200077A6E0 /* AssetTransitionController.swift */,
+				642BF3F41D8D1A530077A6E0 /* AssetTransitionDriver.swift */,
+			);
+			name = TransitioningControllers;
+			sourceTree = "<group>";
+		};
 		642BF3CB1D8D0D7C0077A6E0 = {
 			isa = PBXGroup;
 			children = (
@@ -66,6 +75,7 @@
 				642BF3EE1D8D0F990077A6E0 /* Model */,
 				642BF3EB1D8D0E690077A6E0 /* Controllers */,
 				642BF3F11D8D10DD0077A6E0 /* Views */,
+				641C60321D8DDEA5003D8B8A /* TransitioningControllers */,
 				642BF3DE1D8D0D7C0077A6E0 /* Assets.xcassets */,
 				642BF3E01D8D0D7C0077A6E0 /* LaunchScreen.storyboard */,
 				642BF3E31D8D0D7C0077A6E0 /* Info.plist */,
@@ -95,8 +105,6 @@
 			isa = PBXGroup;
 			children = (
 				642BF3EF1D8D0FA50077A6E0 /* Cell.swift */,
-				642BF3F21D8D1A200077A6E0 /* AssetTransitionController.swift */,
-				642BF3F41D8D1A530077A6E0 /* AssetTransitionDriver.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";

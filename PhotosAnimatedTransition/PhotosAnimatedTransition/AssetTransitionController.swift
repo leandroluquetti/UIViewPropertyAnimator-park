@@ -42,7 +42,7 @@ extension AssetTransitionController: UINavigationControllerDelegate{
 
 
 
-// adopt to UIViewControllerInteractiveTransitioning
+// adopt  UIViewControllerInteractiveTransitioning
 
 extension AssetTransitionController: UIViewControllerInteractiveTransitioning{
     func startInteractiveTransition(_ transitionContext: UIViewControllerContextTransitioning) {
@@ -64,7 +64,7 @@ extension AssetTransitionController: UIViewControllerInteractiveTransitioning{
 
 
 
-// adopt the UIViewControllerAnimatedTransitioning
+// adopt  UIViewControllerAnimatedTransitioning
 
 extension AssetTransitionController: UIViewControllerAnimatedTransitioning{
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
