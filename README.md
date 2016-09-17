@@ -27,8 +27,3 @@
 <p align="center">
    <img src="http://manuelcarlos.github.io/images/mooon.gif" >
 </p>
-
-
-
-
->>>>>>> origin/master
