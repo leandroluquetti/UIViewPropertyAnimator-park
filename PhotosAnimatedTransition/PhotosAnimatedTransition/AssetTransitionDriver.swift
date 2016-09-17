@@ -84,15 +84,6 @@ class AssetTransitionDriver {
     
     
     
-    
-   private func curveVelocity() -> CGVector {
-        guard let point = panGestureRecognizer?.velocity(in: context.containerView) else { return .zero }
-            return CGVector(dx: point.x, dy: point.y)
-    
-    }
-    
-    
-    
     func setupTransitionAnimator(_ transitionAnimations: @escaping ()->(), transitionCompletion: @escaping (UIViewAnimatingPosition)->()){
         // The duration of the images jump animation, if uninterrupted.
         let transitionDuration = AssetTransitionDriver.animationDuration() / 2
@@ -127,8 +118,6 @@ class AssetTransitionDriver {
         }
     }
     
-    
-
     
  
     func endInteraction(){
@@ -188,7 +177,7 @@ class AssetTransitionDriver {
     
     
     
-    //MARK:- Private Convenience
+    //MARK:- Private Convenience Methods
     
     private var  distance: CGFloat{
         let ycenter = (avatar?.imageView?.center.y)! - context.containerView.center.y
@@ -219,6 +208,13 @@ class AssetTransitionDriver {
         avatar?.imageView?.bounds.size = CGSize(width: xprogrs + (avatar?.beginFrame.width)!, height: yprogrs + (avatar?.beginFrame.height)!)
     }
     
+    
+    
+    private func curveVelocity() -> CGVector {
+        guard let point = panGestureRecognizer?.velocity(in: context.containerView) else { return .zero }
+        return CGVector(dx: point.x, dy: point.y)
+        
+    }
     
 }// end
 

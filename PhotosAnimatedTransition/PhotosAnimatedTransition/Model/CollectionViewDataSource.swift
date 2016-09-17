@@ -13,7 +13,11 @@ import UIKit
 //MARK:- Object that will hold the image and its info while the transition runs.
 class AvatarImage {
     
+    /// The UIImageView that will hold the image being animated during the transition.
     var imageView: UIImageView?
+    
+    /// **beginframe** will store the inital frame of the image before the transition, and
+    /// **endFrame** will hold the frame values for the image once  the transition ends.
     var (beginFrame, endFrame): (CGRect, CGRect) = (.zero, .zero)
     
 }// end

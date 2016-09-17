@@ -9,32 +9,50 @@ import UIKit
 
 class PictureViewController: UIViewController {
     
-    weak var image: UIImage?
+// MARK:- Private Properties
     
-    private var imageView: UIImageView?
+    private let imageView: UIImageView
     private var panGesture: UIPanGestureRecognizer?
     private var transitionBegan = false
     
    
    
+// MARK:-  Convenience Initializer
     
+    convenience init( with picture: UIImage) {
+        self.init(nibName: nil, bundle: nil, picture: picture)
+    }
+    
+    init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?, picture: UIImage) {
+        imageView = UIImageView(image: picture)
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("A certain butterfly is already on the wing.")
+    }
+    
+    
+    
+    
+    
+    // MARK:- View life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "profile"
-        imageView = UIImageView(image: image)
-        
+        title = "detail"
+
         // I will not ever forget to turn translatesAutoresizingMaskIntoConstraints to false!
         // I will not ever forget to turn translatesAutoresizingMaskIntoConstraints to false!
         //                        ...
-        imageView?.translatesAutoresizingMaskIntoConstraints = false
-        imageView?.alpha = 0
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.alpha = 0
         
         view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        view.addSubview(imageView!)
+        view.addSubview(imageView)
         
-        imageView?.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        imageView?.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        imageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        imageView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         
         panGesture = UIPanGestureRecognizer()
 
@@ -48,9 +66,9 @@ class PictureViewController: UIViewController {
             panGesture?.addTarget(self, action: #selector(PictureViewController.panGesture(_:)))
             panGesture?.minimumNumberOfTouches = 1
             
-            imageView?.addGestureRecognizer(panGesture!)
-            imageView?.isUserInteractionEnabled = true
-            imageView?.alpha = 1
+            imageView.addGestureRecognizer(panGesture!)
+            imageView.isUserInteractionEnabled = true
+            imageView.alpha = 1
             
             assetTransitionController.startInteractive = false
             assetTransitionController.panGestureRecognizer = nil
@@ -64,10 +82,10 @@ class PictureViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        imageView?.alpha = 0
+        imageView.alpha = 0
     }
     
-    
+    //MARK:- Gesture handlers
     func panGesture(_ sender: UIPanGestureRecognizer) {
 
         if !transitionBegan && sender.state == .changed  {

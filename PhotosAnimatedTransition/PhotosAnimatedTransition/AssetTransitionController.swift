@@ -73,13 +73,12 @@ extension AssetTransitionController: UIViewControllerAnimatedTransitioning{
     
     
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
+        interruptibleAnimator(using: transitionContext).startAnimation()
     }
     
     
     func animationEnded(_ transitionCompleted: Bool) {
-        if transitionCompleted {
-            // animation ended here
-        }
+        if transitionCompleted {   /* animation ended here - nothing to do for now */     }
     }
     
     

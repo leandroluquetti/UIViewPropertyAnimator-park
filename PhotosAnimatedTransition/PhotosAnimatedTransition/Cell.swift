@@ -9,19 +9,15 @@
 
 import UIKit
 
+// MARK:- The collectionview cell
 class Cell : UICollectionViewCell{
     
     static var reuseIdentifier: String { return "\(self)" }
     
+    
     let  imageView = UIImageView()
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        imageView.frame = bounds
-        imageView.clipsToBounds = true
-        imageView.contentMode = .scaleAspectFill
-    }
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
@@ -36,6 +32,13 @@ class Cell : UICollectionViewCell{
     func setup() {
         contentView.addSubview(imageView)
     
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        imageView.frame = bounds
+        imageView.clipsToBounds = true
+        imageView.contentMode = .scaleAspectFill
     }
     
     

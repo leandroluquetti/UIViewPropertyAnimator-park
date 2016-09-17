@@ -10,6 +10,7 @@ import UIKit
 
 class CollectionViewController: UICollectionViewController {
     
+    // MARK:- Private Properties
     private let assetTransitionController = AssetTransitionController()
     private var mydataSource  = CollectionViewDataSource()
 
@@ -42,25 +43,7 @@ class CollectionViewController: UICollectionViewController {
     }
     
  
-    
-    
-    
-    //MARK:- Private methods
-    
-    // setup collection View
-    private func setupCollectionView(){
-
-        // Register cell class & General setup
-        collectionView?.register(Cell.self, forCellWithReuseIdentifier: Cell.reuseIdentifier)
-        collectionView?.indicatorStyle = .black
-        collectionView?.backgroundColor = .white
-        
-        collectionView?.dataSource  = mydataSource
-        collectionView?.delegate    = self
-        
-    }
-    
-    
+    //MARK:- CollecitonView delegate methods
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
        
@@ -79,13 +62,30 @@ class CollectionViewController: UICollectionViewController {
 
             assetTransitionController.avatarImage = pic
             assetTransitionController.startInteractive = false
-          
-            let vc = PictureViewController()
-            vc.image = cell.imageView.image
-            navigationController?.pushViewController(vc, animated: true)
+        
+            let picture = cell.imageView.image!
+        
+            navigationController?.pushViewController( PictureViewController(with: picture), animated: true)
         
     }
     
+    
+    
+    //MARK:- Private convenience methods
+    
+    // setup collection View
+    private func setupCollectionView(){
+        
+        // Register cell class & General setup
+        collectionView?.register(Cell.self, forCellWithReuseIdentifier: Cell.reuseIdentifier)
+        collectionView?.indicatorStyle = .black
+        collectionView?.backgroundColor = .white
+        
+        collectionView?.dataSource  = mydataSource
+        collectionView?.delegate    = self
+        
+    }
+
   
     
 } // ENd
