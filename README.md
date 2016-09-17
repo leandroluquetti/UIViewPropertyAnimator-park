@@ -1,8 +1,15 @@
 
 ###XCode 8 - Swift 3.0 - IOS 10+
 
+* [PhotosAnimatedTransition](https://github.com/manuelCarlos/UIViewPropertyAnimator-park/tree/master/PhotosAnimatedTransition)
 
 
+ - WWDC 2016 - Session 216 Demo app inspired sample.
+ - UIViewPropertyAnimator for interactive animations and transitions in a navigation controller.
+
+<p align="center">
+   <img src="http://manuelcarlos.github.io/images/wwdcDemo.gif" >
+</p>
 
 
 * [AnimateWithUIViewPropertyAnimator](https://github.com/manuelCarlos/IOS10-Animate/tree/master/AnimateWithUIViewPropertyAnimator)
@@ -22,14 +29,6 @@
    <img src="http://manuelcarlos.github.io/images/mooon.gif" >
 </p>
 
-* [PhotosAnimatedTransition](https://github.com/manuelCarlos/UIViewPropertyAnimator-park/tree/master/PhotosAnimatedTransition)
 
-
- - WWDC 2016 - Session 216 Demo app inspired sample.
- - UIViewPropertyAnimator for interactive animations and transitions in a navigation controller.
-
-<p align="center">
-   <img src="http://manuelcarlos.github.io/images/wwdcDemo.gif" >
-</p>
 
 
