@@ -75,7 +75,7 @@ class CollectionViewController: UICollectionViewController {
             let picSize: CGFloat = 300
             let picRadius = picSize / 2
             let size = CGSize(width: picSize, height: picSize)
-            pic.endFrame = CGRect(origin: CGPoint(x: 0 , y:  view.center.y - picRadius) , size: size )
+            pic.endFrame = CGRect(origin: CGPoint(x: view.center.x - picRadius , y:  view.center.y - picRadius) , size: size )
 
             assetTransitionController.avatarImage = pic
             assetTransitionController.startInteractive = false
