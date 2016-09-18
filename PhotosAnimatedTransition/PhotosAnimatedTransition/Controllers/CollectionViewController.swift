@@ -13,7 +13,8 @@ class CollectionViewController: UICollectionViewController {
     // MARK:- Private Properties
     private let assetTransitionController = AssetTransitionController()
     private var mydataSource  = CollectionViewDataSource()
-
+    
+    var selecteCell: Cell?
     
     //MARK:- Initialzers
     override init(collectionViewLayout layout: UICollectionViewLayout) {
@@ -37,8 +38,7 @@ class CollectionViewController: UICollectionViewController {
         super.viewWillAppear(animated)
         
         title = " Pack "
-        
-        navigationController?.delegate = self.assetTransitionController
+        navigationController?.delegate = assetTransitionController
         
     }
     
@@ -46,27 +46,23 @@ class CollectionViewController: UICollectionViewController {
     //MARK:- CollecitonView delegate methods
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-       
         guard let cell = collectionView.cellForItem(at: indexPath) as? Cell else { return }
-        
-            cell.isHidden = true
+        selecteCell = cell
+        cell.isHidden = true
             
-            let pic = AvatarImage()
-            pic.imageView = UIImageView(frame: cell.imageView.frame)
-            pic.imageView?.image = cell.imageView.image
-            pic.beginFrame =  view.convert(cell.imageView.bounds, from: cell.imageView)
-            let picSize: CGFloat = 300
-            let picRadius = picSize / 2
-            let size = CGSize(width: picSize, height: picSize)
-            pic.endFrame = CGRect(origin: CGPoint(x: view.center.x - picRadius , y:  view.center.y - picRadius) , size: size )
+        let pic = AvatarImage()
+        pic.imageView = UIImageView(frame: cell.imageView.frame)
+        pic.imageView?.image = cell.imageView.image
+        pic.beginFrame =  view.convert(cell.imageView.bounds, from: cell.imageView)
+        let picSize: CGFloat = 300
+        let picRadius = picSize / 2
+        let size = CGSize(width: picSize, height: picSize)
+        pic.endFrame = CGRect(origin: CGPoint(x: view.center.x - picRadius , y:  view.center.y - picRadius) , size: size )
 
-            assetTransitionController.avatarImage = pic
-            assetTransitionController.startInteractive = false
-        
-            let picture = cell.imageView.image!
-        
-            navigationController?.pushViewController( PictureViewController(with: picture), animated: true)
-        
+        assetTransitionController.avatarImage = pic
+        assetTransitionController.startInteractive = false
+
+        navigationController?.pushViewController( PictureViewController(with: cell.imageView.image!), animated: true)
     }
     
     

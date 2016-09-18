@@ -41,16 +41,18 @@ class PictureViewController: UIViewController {
         super.viewDidLoad()
         
         title = "detail"
-
+        
+        view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        view.addSubview(imageView)
+        
+        
         // I will not ever forget to turn translatesAutoresizingMaskIntoConstraints to false!
         // I will not ever forget to turn translatesAutoresizingMaskIntoConstraints to false!
         //                        ...
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.alpha = 0
-        
-        view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        view.addSubview(imageView)
-        
+        imageView.contentMode = .scaleAspectFill
+        imageView.widthAnchor.constraint(equalToConstant: 300).isActive = true
         imageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         imageView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         
