@@ -74,8 +74,8 @@ class CollectionViewController: UICollectionViewController {
         
         // Register cell class & General setup
         collectionView?.register(Cell.self, forCellWithReuseIdentifier: Cell.reuseIdentifier)
-        collectionView?.indicatorStyle = .black
-        collectionView?.backgroundColor = .white
+        collectionView?.indicatorStyle = .white
+        collectionView?.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         
         collectionView?.dataSource  = mydataSource
         collectionView?.delegate    = self

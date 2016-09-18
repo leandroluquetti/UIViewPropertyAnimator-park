@@ -38,7 +38,7 @@ class AssetTransitionDriver {
        
         context.containerView.addSubview((toVC?.view)!)
         // this backgroundColor will have the effect of dimming the collection view on/off during the transition
-        context.containerView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        context.containerView.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         context.containerView.addSubview( (avatar.imageView)! )
       
         toVC?.view.alpha = 0.0
