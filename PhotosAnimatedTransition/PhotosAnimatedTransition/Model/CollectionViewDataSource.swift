@@ -16,19 +16,43 @@ class AvatarImage {
     /// The UIImageView that will hold the image being animated during the transition.
     var imageView: UIImageView?
     
-    /// **beginframe** will store the inital frame of the image before the transition, and
-    /// **endFrame** will hold the frame values for the image once  the transition ends.
-    var (beginFrame, endFrame): (CGRect, CGRect) = (.zero, .zero)
+    /// **frameAt.start** will store the inital frame of the image before the transition, and
+    /// **frameAt.end** will hold the frame values for the image once  the transition ends.
+    var frameAt: (start: CGRect, end: CGRect) = (.zero, .zero)
+
+    
+    /// The center point of the image view.
+    var position: CGPoint?{
+        get{
+            return imageView?.center
+        }
+        set{
+            imageView?.center = newValue!
+        }
+    }
+    
+    /// the size of the image view.
+    var size: CGSize?{
+        get{
+            return imageView?.bounds.size
+        }
+        set{
+            imageView?.bounds.size = newValue!
+        }
+    }
+
     
 }// end
 
 
-//MARK:- Data source for the collectionView
+
+
+//MARK:- Data source for the collectionView.
 class CollectionViewDataSource: NSObject, UICollectionViewDataSource{
     
     
     
-    //MARK: CollectionView DataSource Methods
+    //MARK: CollectionView DataSource Methods.
     public func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
@@ -44,9 +68,7 @@ class CollectionViewDataSource: NSObject, UICollectionViewDataSource{
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
       
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Cell.reuseIdentifier, for: indexPath) as! Cell
-        print(indexPath)
         cell.imageView.image = UIImage(named: "\(indexPath.item)")
-        
         
         return cell
     }

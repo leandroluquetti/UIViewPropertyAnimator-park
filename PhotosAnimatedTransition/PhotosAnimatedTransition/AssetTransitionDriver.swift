@@ -28,7 +28,7 @@ class AssetTransitionDriver {
         self.context = context
         
         avatar = image
-        avatar.imageView?.frame = avatar.beginFrame
+        avatar.imageView?.frame = avatar.frameAt.start
         
         let fromVC = context.viewController(forKey: UITransitionContextViewControllerKey.from)
         let toVC = context.viewController(forKey: UITransitionContextViewControllerKey.to)
@@ -129,15 +129,15 @@ class AssetTransitionDriver {
     
     
     func animate( _ toPosition: UIViewAnimatingPosition){
-        let imageFrameAnimator = AssetTransitionDriver.propertyAnimator( curveVelocity )
+        // A new timming parameter could be passed to this animator, for example a velocity CGVector,
+        // which would give the image jump animation a different feel.
+        let imageFrameAnimator = AssetTransitionDriver.propertyAnimator()
         imageFrameAnimator.addAnimations{
-                self.avatar.imageView?.frame = (toPosition == .end ? self.avatar.endFrame : self.avatar.beginFrame)
+                self.avatar.imageView?.frame = (toPosition == .end ? self.avatar.frameAt.end : self.avatar.frameAt.start)
         }
         imageFrameAnimator.addCompletion {[unowned self] postion in
             if toPosition == .end{
-                    let (b,e) = ( (self.avatar.beginFrame) , (self.avatar.endFrame) )
-                    self.avatar.beginFrame = e
-                    self.avatar.endFrame = b
+                self.avatar.frameAt = (self.avatar.frameAt.end, self.avatar.frameAt.start)
             }
         }
         imageFrameAnimator.startAnimation()
@@ -189,23 +189,14 @@ class AssetTransitionDriver {
     
     
     private func updateImageForInteractive( _ translation: CGPoint){
-        let yprogrs = awayFromCenterPercent * ( avatar.endFrame.height - avatar.beginFrame.height )
-        let xprogrs = awayFromCenterPercent * ( avatar.endFrame.width - avatar.beginFrame.width)
+        let yprogrs = awayFromCenterPercent * ( avatar.frameAt.end.height - avatar.frameAt.start.height )
+        let xprogrs = awayFromCenterPercent * ( avatar.frameAt.end.width - avatar.frameAt.start.width)
         
-        avatar.imageView?.center = CGPoint(x: (avatar.imageView?.center.x)!  + translation.x,y: (avatar.imageView?.center.y)! + translation.y)
-        print(avatar.imageView?.center)
-        avatar.imageView?.bounds.size = CGSize(width: xprogrs + avatar.beginFrame.width, height: yprogrs + avatar.beginFrame.height )
+        avatar.position = CGPoint(x: (avatar.imageView?.center.x)!  + translation.x,y: (avatar.imageView?.center.y)! + translation.y)
+        avatar.size = CGSize(width: xprogrs + avatar.frameAt.start.width, height: yprogrs + avatar.frameAt.start.height )
     }
     
     
-    // Determines the speed/ duration of the images fall back animation, measured in meters per second,
-    // based on the distant of the image from the center when released from the pan gesture.
-    // The further away from the center of the screen, the faster the image returns into place.
-    private var curveVelocity: CGVector {
-        guard let point = panGestureRecognizer?.velocity(in: context.containerView) else { return .zero }
-
-        return CGVector(dx: point.x / 15, dy: point.y / 15)
-    }
     
 }// end
 

@@ -53,11 +53,11 @@ class CollectionViewController: UICollectionViewController {
         let pic = AvatarImage()
         pic.imageView = UIImageView(frame: cell.imageView.frame)
         pic.imageView?.image = cell.imageView.image
-        pic.beginFrame =  view.convert(cell.imageView.bounds, from: cell.imageView)
+        pic.frameAt.start =  view.convert(cell.imageView.bounds, from: cell.imageView)
         let picSize: CGFloat = 300
         let picRadius = picSize / 2
         let size = CGSize(width: picSize, height: picSize)
-        pic.endFrame = CGRect(origin: CGPoint(x: view.center.x - picRadius , y:  view.center.y - picRadius) , size: size )
+        pic.frameAt.end = CGRect(origin: CGPoint(x: view.center.x - picRadius , y:  view.center.y - picRadius) , size: size )
 
         assetTransitionController.avatarImage = pic
         assetTransitionController.startInteractive = false
